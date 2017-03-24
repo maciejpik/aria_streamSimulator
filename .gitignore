@@ -1,0 +1,5 @@
+bin/
+obj/
+streamSimulator_Aria.layout
+*.jpg
+video_stream/
