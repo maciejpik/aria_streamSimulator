@@ -17,7 +17,7 @@ public:
     static void* simulatorThreadStarter( void* class_instance );
     void waitForThreadExecution(void);
     int getSynchroTime_ums(void);
-    std::pair<unsigned char*, size_t> getImage(void);
+    std::pair<unsigned char*, int> getImage(void);
 
 protected:
     void simulatorThread(void);
@@ -28,6 +28,7 @@ private:
     std::string my_filetype;
     unsigned char my_image[1000000];
     size_t my_imageData;
+    int my_imageDataLen;
     bool my_imageMutex;
     int my_synchroTime_ums;
 };

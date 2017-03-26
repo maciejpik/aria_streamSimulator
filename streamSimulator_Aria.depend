@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1490390924 source:/home/m/Dokumenty/programowanie/streamSimulator_Aria/main.cpp
+1490520066 source:/home/m/Dokumenty/programowanie/streamSimulator_Aria/main.cpp
 	<opencv2/core/core.hpp>
 	<opencv2/imgproc/imgproc.hpp>
 	<opencv2/highgui/highgui.hpp>
@@ -7,10 +7,10 @@
 	<iostream>
 	"streamSimulator.hpp"
 
-1490390973 source:/home/m/Dokumenty/programowanie/streamSimulator_Aria/streamSimulator.cpp
+1490396914 source:/home/m/Dokumenty/programowanie/streamSimulator_Aria/streamSimulator.cpp
 	"streamSimulator.hpp"
 
-1490390171 /home/m/Dokumenty/programowanie/streamSimulator_Aria/streamSimulator.hpp
+1490519919 /home/m/Dokumenty/programowanie/streamSimulator_Aria/streamSimulator.hpp
 	<pthread.h>
 	<string>
 	<iostream>

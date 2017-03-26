@@ -41,7 +41,6 @@ void* streamSimulator::simulatorThreadStarter(void* class_instance)
 void streamSimulator::simulatorThread()
 {
     FILE* read_image;
-    int file_len;
     for(std::vector<std::string>::iterator i = my_imagesVector.begin();
             true; ++i)
     {
@@ -60,11 +59,11 @@ void streamSimulator::simulatorThread()
 
         fseek(read_image, 0, SEEK_END);
         fseek(read_image, 0, SEEK_END);
-        file_len = ftell(read_image);
+        my_imageDataLen = ftell(read_image);
         fseek(read_image, 0, SEEK_SET);
 
         my_imageMutex = true;
-        my_imageData = fread(my_image, 1, file_len, read_image);
+        my_imageData = fread(my_image, 1, my_imageDataLen, read_image);
         my_imageMutex = false;
 
         fclose(read_image);
@@ -83,8 +82,8 @@ int streamSimulator::getSynchroTime_ums()
     return my_synchroTime_ums;
 }
 
-std::pair<unsigned char*, size_t> streamSimulator::getImage() {
+std::pair<unsigned char*, int> streamSimulator::getImage() {
     while( my_imageMutex )
         usleep( 10 );
-    return std::make_pair( &my_image[0], my_imageData);
+    return std::make_pair( &my_image[0], my_imageDataLen);
 }

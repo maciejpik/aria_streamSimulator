@@ -14,12 +14,13 @@ int main()
     streamSimulator* myStream = new streamSimulator();
 
     cv::namedWindow( "Stream", CV_WINDOW_AUTOSIZE );
-    std::pair<unsigned char*, size_t> imageData;
+    std::pair<unsigned char*, int> imageData;
     while( true )
     {
         imageData = myStream->getImage();
         std::vector<unsigned char> buffer( imageData.first, imageData.first + imageData.second );
-        cv::Mat image = imdecode(buffer, cv::IMREAD_ANYCOLOR);
+//        cv::Mat image = imdecode(buffer, cv::IMREAD_ANYCOLOR);
+        cv::Mat image = imdecode(buffer, cv::IMREAD_GRAYSCALE);
         if(image.empty())
             return 0;
         cv::imshow("Stream", image);

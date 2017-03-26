@@ -22,6 +22,7 @@
 					<Add library="opencv_imgproc" />
 					<Add library="opencv_highgui" />
 					<Add library="opencv_imgcodecs" />
+					<Add library="pthread" />
 					<Add directory="/usr/local/include/opencv2" />
 				</Linker>
 			</Target>
@@ -34,6 +35,8 @@
 			<Add option="`opencv-config --ldstaticflags`" />
 		</Linker>
 		<Unit filename="main.cpp" />
+		<Unit filename="streamSimulator.cpp" />
+		<Unit filename="streamSimulator.hpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
